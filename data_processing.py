@@ -79,10 +79,10 @@ def clean_ans(ans):
     return ans.strip()
 
 
-def get_ans(pred):
+def get_ans(pred) -> str:
     text = pred.replace("\n", "").strip()
     if text.rfind(FINAL_ANS) >= 0:
-        pred_ans = text[text.rfind(FINAL_ANS) + len(FINAL_ANS): len(text)].strip()
+        pred_ans = text[text.rfind(FINAL_ANS) + len(FINAL_ANS) : len(text)].strip()
         return clean_ans(pred_ans)
     else:
         return ""
